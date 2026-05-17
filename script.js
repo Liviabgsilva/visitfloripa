@@ -1,18 +1,65 @@
 // --- DADOS DINÂMICOS DO SITE (MOCK DATA) ---
+const imgGenerica1 = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800";
+const imgGenerica2 = "https://images.unsplash.com/photo-1535262412227-85541e910204?auto=format&fit=crop&w=800";
+const imgGenerica3 = "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800";
+const imgGenerica4 = "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800";
+
 const DATA = {
     destinos: [
         { nome: "Jurerê Internacional", desc: "Luxo, beach clubs sofisticados e mansões à beira-mar.", img: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800", cat: "Norte" },
-        { nome: "Santo Antônio de Lisboa", desc: "Cultura açoriana, arquitetura preservada e o melhor pôr-do-sol.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800", cat: "Norte" },
+        { nome: "Santo Antônio de Lisboa", desc: "Cultura açoriana, arquitetura preservada e o melhor pôr-do-sol.", img: imgGenerica1, cat: "Norte" },
         { nome: "Praia do Campeche", desc: "Natureza selvagem, ondas perfeitas e a mística Ilha do Campeche.", img: "https://images.unsplash.com/photo-1582291142747-19412953e34b?auto=format&fit=crop&w=800", cat: "Sul" }
     ],
     praias: [
-        { nome: "Praia Mole", desc: "Ponto de encontro da viajem ativa, surfistas e desportistas.", regiao: "Leste", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800", temp: "23°C", lotacao: "Alta" },
-        { nome: "Barra da Lagoa", desc: "Ideal para famílias, possui piscinas naturais incríveis.", regiao: "Leste", img: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Média" },
-        { nome: "Lagoinha do Leste", desc: "A praia mais selvagem e preservada de Florianópolis, acesso por trilha.", regiao: "Sul", img: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800", temp: "21°C", lotacao: "Baixa" }
+        // --- NORTE DA ILHA ---
+        { nome: "Jurerê", desc: "Águas calmas e quentes, excelente para famílias com excelente infraestrutura.", regiao: "Norte", img: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800", temp: "25°C", lotacao: "Alta" },
+        { nome: "Jurerê Internacional", desc: "Sinónimo de luxo, mansões e beach clubs exclusivos com festas sunset.", regiao: "Norte", img: imgGenerica1, temp: "25°C", lotacao: "Muito Alta" },
+        { nome: "Canasvieiras", desc: "Um dos destinos mais procurados por turistas do Mercosul, mar tranquilo e comércio forte.", regiao: "Norte", img: imgGenerica2, temp: "24°C", lotacao: "Muito Alta" },
+        { nome: "Cachoeira do Bom Jesus", desc: "Extensão de Canasvieiras, com faixa de areia larga e águas convidativas.", regiao: "Norte", img: imgGenerica3, temp: "24°C", lotacao: "Média" },
+        { nome: "Ponta das Canas", desc: "Praia charmosa na ponta norte da ilha com colónias de pescadores.", regiao: "Norte", img: imgGenerica4, temp: "23°C", lotacao: "Média" },
+        { nome: "Lagoinha (do Norte)", desc: "Pequena e abrigada, com formato de ferradura e mar cristalino.", regiao: "Norte", img: imgGenerica1, temp: "24°C", lotacao: "Média" },
+        { nome: "Praia Brava", desc: "Paraíso dos surfistas com mar agitado, miradouro deslumbrante e condomínios de luxo.", regiao: "Norte", img: imgGenerica2, temp: "22°C", lotacao: "Alta" },
+        { nome: "Praia dos Ingleses", desc: "Infraestrutura completa, dunas incríveis e ótima para todas as idades.", regiao: "Norte", img: imgGenerica3, temp: "23°C", lotacao: "Muito Alta" },
+        { nome: "Praia do Santinho", desc: "História e natureza encontram-se. Famosa pelo resort e pelas inscrições rupestres.", regiao: "Norte", img: imgGenerica4, temp: "23°C", lotacao: "Alta" },
+        { nome: "Praia do Forte", desc: "Junto à histórica Fortaleza de São José da Ponta Grossa. Mar calmo e extenso.", regiao: "Norte", img: imgGenerica1, temp: "24°C", lotacao: "Média" },
+        { nome: "Praia da Daniela", desc: "Mar calmo e quente que parece uma lagoa. Ideal para crianças e famílias.", regiao: "Norte", img: imgGenerica2, temp: "25°C", lotacao: "Média" },
+        { nome: "Sambaqui", desc: "Raízes açorianas fortes, gastronomia focada em ostras e cenário bucólico.", regiao: "Norte", img: imgGenerica3, temp: "23°C", lotacao: "Baixa" },
+        { nome: "Santo Antônio de Lisboa", desc: "Um dos bairros mais antigos de Florianópolis, com arquitetura colonial e pôr do sol famoso.", regiao: "Norte", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Média" },
+        { nome: "Cacupé", desc: "Orla requintada com restaurantes sofisticados e vista espetacular para a Beira-Mar.", regiao: "Norte", img: imgGenerica4, temp: "23°C", lotacao: "Baixa" },
+
+        // --- LESTE DA ILHA ---
+        { nome: "Barra da Lagoa", desc: "O maior núcleo pesqueiro da ilha, com o Canal da Barra e piscinas naturais.", regiao: "Leste", img: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Muito Alta" },
+        { nome: "Prainha da Barra", desc: "Pequena e escondida, acessível por uma curta trilha na Barra da Lagoa.", regiao: "Leste", img: imgGenerica1, temp: "22°C", lotacao: "Média" },
+        { nome: "Praia Mole", desc: "Ponto de encontro da viajem ativa, surfistas, parapente e bares com DJs.", regiao: "Leste", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800", temp: "23°C", lotacao: "Alta" },
+        { nome: "Praia da Galheta", desc: "Acessível apenas por trilha e reservada para o naturismo (opcional).", regiao: "Leste", img: imgGenerica2, temp: "22°C", lotacao: "Baixa" },
+        { nome: "Praia da Joaquina", desc: "Reconhecimento internacional no surf. Dunas imensas famosas para a prática de sandboard.", regiao: "Leste", img: imgGenerica3, temp: "23°C", lotacao: "Muito Alta" },
+        { nome: "Praia do Gravatá", desc: "Trilha escondida, com relvados perfeitos para piquenique e mar aberto.", regiao: "Leste", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" },
+        { nome: "Praia do Moçambique", desc: "A maior extensão de areia da ilha (12km). Selvagem e preservada dentro de um parque estadual.", regiao: "Leste", img: imgGenerica1, temp: "21°C", lotacao: "Baixa" },
+
+        // --- SUL DA ILHA ---
+        { nome: "Praia do Campeche", desc: "Mar aberto de águas cristalinas com vista magnífica para a Ilha do Campeche.", regiao: "Sul", img: "https://images.unsplash.com/photo-1582291142747-19412953e34b?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Alta" },
+        { nome: "Praia da Armação", desc: "Tradicional vila de pescadores, com a icónica Igreja de Sant'Ana.", regiao: "Sul", img: imgGenerica2, temp: "22°C", lotacao: "Média" },
+        { nome: "Praia do Matadeiro", desc: "Paraíso do surf no Sul da ilha. Acessível apenas atravessando o rio.", regiao: "Sul", img: imgGenerica3, temp: "21°C", lotacao: "Média" },
+        { nome: "Praia do Morro das Pedras", desc: "Rodeada de rochas escuras, com ondas fortes e um miradouro espetacular no Convento.", regiao: "Sul", img: imgGenerica4, temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia do Pântano do Sul", desc: "Famosa pelos restaurantes tradicionais à beira-mar e pela pesca da tainha.", regiao: "Sul", img: imgGenerica1, temp: "22°C", lotacao: "Alta" },
+        { nome: "Praia dos Açores", desc: "Tranquila e com extensa faixa de areia, excelente para relaxar em família.", regiao: "Sul", img: imgGenerica2, temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia da Solidão", desc: "Cercada pela Mata Atlântica exuberante, possui ainda uma cascata escondida.", regiao: "Sul", img: imgGenerica3, temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia do Saquinho", desc: "Isolada, acessível por uma trilha cimentada através do Morro. Perfeita para desconectar.", regiao: "Sul", img: imgGenerica4, temp: "20°C", lotacao: "Muito Baixa" },
+        { nome: "Praia da Lagoinha do Leste", desc: "Frequentemente eleita a mais bela da ilha. Selvagem, sem acesso rodoviário, ideal para trilhas.", regiao: "Sul", img: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800", temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia de Naufragados", desc: "No extremo sul da ilha. História em ruínas e natureza forte ao redor do farol.", regiao: "Sul", img: imgGenerica1, temp: "20°C", lotacao: "Baixa" },
+        { nome: "Ribeirão da Ilha", desc: "Polo gastronómico das ostras e um dos locais com arquitetura colonial açoriana mais preservada.", regiao: "Sul", img: imgGenerica2, temp: "23°C", lotacao: "Média" },
+        { nome: "Tapera", desc: "Mar raso, calmo e águas quentes. Uma praia mais nativa e residencial.", regiao: "Sul", img: imgGenerica3, temp: "25°C", lotacao: "Baixa" },
+
+        // --- CONTINENTAL / CENTRO ---
+        { nome: "Praia de Itaguaçu", desc: "Vista maravilhosa para o pôr do sol, cercada por pedras folclóricas cheias de lendas açorianas.", regiao: "Centro", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" },
+        { nome: "Praia das Palmeiras", desc: "Pequena e tranquila, no coração da região continental com foco gastronómico ao redor.", regiao: "Centro", img: imgGenerica1, temp: "23°C", lotacao: "Baixa" },
+        { nome: "Praia da Saudade", desc: "Praia urbanizada da região de Coqueiros, ideal para caminhadas no calçadão à beira-mar.", regiao: "Centro", img: imgGenerica2, temp: "22°C", lotacao: "Média" },
+        { nome: "Praia do Meio", desc: "Faz parte do circuito gastronómico de Coqueiros. Mais frequentada por moradores para exercício.", regiao: "Centro", img: imgGenerica3, temp: "23°C", lotacao: "Média" },
+        { nome: "Praia do Bom Abrigo", desc: "Reduto charmoso, seguro e bem cuidado, ótimo para contemplar a ponte Hercílio Luz ao longe.", regiao: "Centro", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" }
     ],
     hospedagem: [
         { nome: "Ilha Resort & Spa", local: "Ponta das Canas", preco: "R$ 1.650 / noite", rating: 5, desc: "Sofisticação de padrão internacional à beira-mar com spa premiado.", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800" },
-        { nome: "Villas de Jurerê Boutique", local: "Jurerê Internacional", preco: "R$ 2.100 / noite", rating: 5, desc: "Exclusividade absoluta e atendimento personalizado personalizado de mordomo.", img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800" }
+        { nome: "Villas de Jurerê Boutique", local: "Jurerê Internacional", preco: "R$ 2.100 / noite", rating: 5, desc: "Exclusividade absoluta e atendimento personalizado de mordomo.", img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800" }
     ],
     gastronomia: [
         { nome: "Ostradamus", cat: "frutos-do-mar", local: "Ribeirão da Ilha", desc: "Ostras vivas depuradas e o melhor polvo grelhado num trapiche histórico.", preco: "R$ 180 - R$ 350", img: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800" },
@@ -73,7 +120,7 @@ function authAction(type) {
             updateUI();
             showView('home');
         } else {
-            alert("Credenciais incorretas ou existentes.");
+            alert("Credenciais incorretas ou inexistentes.");
         }
     }
     else if (type === 'logout') {
@@ -160,11 +207,18 @@ function renderGrids() {
     filterGastronomia('todos');
 }
 
-// --- FILTROS DE PRAIAS ---
-function filterPraias(regiao) {
+// --- FILTROS DE PRAIAS ATUALIZADO ---
+function filterPraias(regiao, btnElement = null) {
     const praiasGrid = document.getElementById('praias-grid');
     if (!praiasGrid) return;
     
+    // UI Button Toggle
+    if (btnElement) {
+        const buttons = btnElement.parentElement.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        btnElement.classList.add('active');
+    }
+
     praiasGrid.innerHTML = '';
     const filtered = regiao === 'todas' ? DATA.praias : DATA.praias.filter(p => p.regiao === regiao);
     
@@ -172,15 +226,16 @@ function filterPraias(regiao) {
         praiasGrid.innerHTML += `
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="${p.img}" alt="${p.nome}">
+                    <img src="${p.img}" alt="${p.nome}" loading="lazy">
                     <span class="badge-tag">${p.regiao}</span>
                 </div>
                 <div class="card-body">
                     <h3>${p.nome}</h3>
                     <p>${p.desc}</p>
-                    <div class="card-footer">
-                        <span><i class="fas fa-thermometer-half"></i> ${p.temp}</span>
-                        <span><i class="fas fa-users"></i> Lotação: ${p.lotacao}</span>
+                    <div class="card-footer" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
+                        <span><i class="fas fa-thermometer-half"></i> Temp Água: ${p.temp}</span>
+                        <span><i class="fas fa-users"></i> Movimento: ${p.lotacao}</span>
+                        <button class="btn-fav" style="align-self: flex-end; margin-top: 10px;" onclick="toggleFavorite('${p.nome}')"><i class="far fa-heart"></i> Guardar</button>
                     </div>
                 </div>
             </div>`;
@@ -216,7 +271,7 @@ function filterGastronomia(cat) {
 // --- SISTEMA DE FAVORITOS ---
 function toggleFavorite(itemName) {
     if (!currentUser) {
-        alert("Por favor, faça login para salvar favoritos.");
+        alert("Por favor, faça login para guardar favoritos.");
         showView('login');
         return;
     }
@@ -247,9 +302,9 @@ function renderFavorites() {
 
     currentUser.favorites.forEach(fav => {
         favGrid.innerHTML += `
-            <div class="fav-item glass">
-                <span>${fav}</span>
-                <button onclick="toggleFavorite('${fav}')"><i class="fas fa-trash"></i></button>
+            <div class="fav-item glass" style="display:flex; justify-content:space-between; padding:20px; border-radius:15px; margin-bottom:15px;">
+                <span style="font-weight:700;">${fav}</span>
+                <button onclick="toggleFavorite('${fav}')" style="background:transparent; border:none; color:#ff4a5a; cursor:pointer;"><i class="fas fa-trash"></i> Remover</button>
             </div>`;
     });
 }
@@ -267,12 +322,12 @@ function renderHistory() {
 
     currentUser.history.forEach(h => {
         historyList.innerHTML += `
-            <div class="history-card glass">
+            <div class="history-card glass" style="padding:20px; border-radius:15px; margin-bottom:15px; display:flex; justify-content:space-between; align-items:center;">
                 <div class="history-info">
-                    <h4>${h.destino}</h4>
-                    <p>${h.data} — Tipo: ${h.tipo}</p>
+                    <h4 style="font-weight:700; margin-bottom:5px;">${h.destino}</h4>
+                    <p style="font-size:0.9rem; color:#aaa;">${h.data} — Tipo: ${h.tipo}</p>
                 </div>
-                <span class="status-badge">Confirmada</span>
+                <span class="status-badge" style="background:rgba(0,255,102,0.1); color:#00ff66; padding:5px 15px; border-radius:50px; font-size:0.8rem;">Confirmada</span>
             </div>`;
     });
 }
