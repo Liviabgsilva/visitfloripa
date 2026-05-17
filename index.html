@@ -39,11 +39,11 @@
             </div>
             
             <ul class="nav-menu">
-                <li><a href="javascript:void(0)" onclick="showView('Home')">Início</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Praias')">Praias</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Hospedagem')">Hospedagem</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Gastronomia')">Gastronomia</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Contato')">Contacto</a></li>
+                <li><a href="javascript:void(0)" onclick="showView('home')">Início</a></li>
+                <li><a href="javascript:void(0)" onclick="showView('praias')">Praias</a></li>
+                <li><a href="javascript:void(0)" onclick="showView('hospedagem')">Hospedagem</a></li>
+                <li><a href="javascript:void(0)" onclick="showView('gastronomia')">Gastronomia</a></li>
+                <li><a href="javascript:void(0)" onclick="showView('contato')">Contacto</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -66,13 +66,13 @@
     </nav>
 
     <!-- Menu Mobile Lateral -->
-    <div id="mobile-menu" class="glass">
+    <div id="mobile-menu" class="glass-mobile">
         <ul class="mobile-nav-links">
-            <li><a href="javascript:void(0)" onclick="showView('Home'); toggleMobileMenu()">Início</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Praias'); toggleMobileMenu()">Praias</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Hospedagem'); toggleMobileMenu()">Hospedagem</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Gastronomia'); toggleMobileMenu()">Gastronomia</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Contato'); toggleMobileMenu()">Contacto</a></li>
+            <li><a href="javascript:void(0)" onclick="showView('home'); toggleMobileMenu()">Início</a></li>
+            <li><a href="javascript:void(0)" onclick="showView('praias'); toggleMobileMenu()">Praias</a></li>
+            <li><a href="javascript:void(0)" onclick="showView('hospedagem'); toggleMobileMenu()">Hospedagem</a></li>
+            <li><a href="javascript:void(0)" onclick="showView('gastronomia'); toggleMobileMenu()">Gastronomia</a></li>
+            <li><a href="javascript:void(0)" onclick="showView('contato'); toggleMobileMenu()">Contacto</a></li>
         </ul>
     </div>
 
@@ -326,7 +326,7 @@
 
     <!-- Chat Concierge Inteligente (IA) -->
     <div id="chat-widget">
-        <div id="chat-window" class="glass hidden">
+        <div id="chat-window" class="glass-chat hidden">
             <div class="chat-header">
                 <div class="chat-header-title">
                     <div class="status-indicator"></div>
@@ -378,6 +378,9 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Floripa Premium. Desenvolvido com padrões de luxo internacionais. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.7526449820817!2d-48.5521!3d-27.5973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95193c2e2e2e2e2f%3A0x0!2sFlorianópolis%2C%20Santa%20Catarina!5e0!3m2!1spt-BR!2sbr!4v1716014000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Florianópolis"></iframe>
         </div>
     </footer>
 <script src="script.js"></script>

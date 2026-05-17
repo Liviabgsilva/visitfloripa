@@ -65,6 +65,14 @@ const DATA = {
         { nome: "Ostradamus", cat: "frutos-do-mar", local: "Ribeirão da Ilha", desc: "Ostras vivas depuradas e o melhor polvo grelhado num trapiche histórico.", preco: "R$ 180 - R$ 350", img: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800" },
         { nome: "Artusi Ristorante", cat: "italiana", local: "Centro", desc: "Alta culinária italiana com toques inovadores pelo chef de prestígio.", preco: "R$ 150 - R$ 280", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800" },
         { nome: "Jay Bistrô", cat: "contemporanea", local: "Jurerê", desc: "Menu de autor sofisticado e harmonizações com grandes rótulos mundiais.", preco: "R$ 220 - R$ 450", img: "https://images.unsplash.com/photo-1550966841-3ee7adac1ad4?auto=format&fit=crop&w=800" }
+    ],
+    eventos: [
+        { nome: "Festival de Comida de Rua", data: "15 de Junho 2026", local: "Praia de Canasvieiras", desc: "Celebração culinária com gastronomia local e internacional.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800" },
+        { nome: "Sunset Music Festival", data: "22 de Junho 2026", local: "Jurerê Internacional", desc: "Música ao vivo com os melhores DJs internacionais durante o pôr do sol.", img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800" },
+        { nome: "Trilha Eco-aventura", data: "28 de Junho 2026", local: "Praia da Lagoinha do Leste", desc: "Expedição guiada pela natureza selvagem da Mata Atlântica.", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800" },
+        { nome: "Campeonato de Surf", data: "05 de Julho 2026", local: "Praia Mole", desc: "Competição internacional de surf com atletas do mundo todo.", img: "https://images.unsplash.com/photo-1502680390467-361b25e5d895?auto=format&fit=crop&w=800" },
+        { nome: "Noite de Arte Contemporânea", data: "12 de Julho 2026", local: "Centro Histórico", desc: "Exposição de arte, performances e instalações interativas.", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800" },
+        { nome: "Passeio de Barco Sunset", data: "19 de Julho 2026", local: "Marina da Barra da Lagoa", desc: "Experiência gastronómica flutuante com vista panorâmica do pôr do sol.", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800" }
     ]
 };
 
@@ -268,6 +276,32 @@ function filterGastronomia(cat) {
     });
 }
 
+// --- RENDERIZAÇÃO DE EVENTOS ---
+function renderEventos() {
+    const eventosGrid = document.getElementById('eventos-grid');
+    if (!eventosGrid) return;
+
+    eventosGrid.innerHTML = '';
+    DATA.eventos.forEach(e => {
+        eventosGrid.innerHTML += `
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="${e.img}" alt="${e.nome}">
+                    <span class="badge-tag">Evento</span>
+                </div>
+                <div class="card-body">
+                    <h3>${e.nome}</h3>
+                    <p>${e.desc}</p>
+                    <div class="card-footer" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
+                        <span><i class="fas fa-calendar-alt"></i> ${e.data}</span>
+                        <span><i class="fas fa-map-marker-alt"></i> ${e.local}</span>
+                        <button class="btn-fav" style="align-self: flex-end; margin-top: 10px;" onclick="toggleFavorite('${e.nome}')"><i class="far fa-heart"></i> Guardar</button>
+                    </div>
+                </div>
+            </div>`;
+    });
+}
+
 // --- SISTEMA DE FAVORITOS ---
 function toggleFavorite(itemName) {
     if (!currentUser) {
@@ -432,4 +466,100 @@ function sendChatMessage() {
         body.innerHTML += `<div class="chat-message bot">${reply}</div>`;
         body.scrollTop = body.scrollHeight;
     }, 1000);
+}
+
+// --- FUNÇÕES COMPLEMENTARES FALTANTES ---
+
+// Pesquisa
+function executeSearch() {
+    const searchTerm = document.getElementById('main-search-input').value.toLowerCase();
+    if (!searchTerm) {
+        alert("Por favor, digite algo para procurar.");
+        return;
+    }
+    
+    // Procurar em destinos
+    const foundDestino = DATA.destinos.find(d => d.nome.toLowerCase().includes(searchTerm));
+    if (foundDestino) {
+        showView('home');
+        setTimeout(() => alert(`Encontrado: ${foundDestino.nome}`), 300);
+        return;
+    }
+    
+    // Procurar em praias
+    const foundPraia = DATA.praias.find(p => p.nome.toLowerCase().includes(searchTerm));
+    if (foundPraia) {
+        showView('praias');
+        setTimeout(() => alert(`Encontrado: ${foundPraia.nome}`), 300);
+        return;
+    }
+    
+    // Procurar em gastronomia
+    const foundGastro = DATA.gastronomia.find(g => g.nome.toLowerCase().includes(searchTerm));
+    if (foundGastro) {
+        showView('gastronomia');
+        setTimeout(() => alert(`Encontrado: ${foundGastro.nome}`), 300);
+        return;
+    }
+    
+    alert("Nenhum resultado encontrado para: " + searchTerm);
+}
+
+// Scroll suave para seção
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Trocar aba do perfil
+function switchProfileTab(tabName) {
+    // Ocultar todos os conteúdos
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // Mostrar o selecionado
+    const tab = document.getElementById(`tab-${tabName}`);
+    if (tab) {
+        tab.classList.add('active');
+    }
+    
+    // Marcar botão ativo
+    event.target.classList.add('active');
+}
+
+// Enviar formulário de contacto
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const name = document.getElementById('contact-name').value;
+    const email = document.getElementById('contact-email').value;
+    const message = document.getElementById('contact-message').value;
+    
+    if (name && email && message) {
+        alert(`Obrigado ${name}! A sua mensagem foi enviada para viagem@floripando.com`);
+        event.target.reset();
+    }
+}
+
+// Tecla Enter no chat
+function handleChatKey(event) {
+    if (event.key === 'Enter') {
+        sendChatMessage();
+    }
+}
+
+// Mudar avatar do utilizador
+function handleAvatarChange(event) {
+    const file = event.target.files[0];
+    if (file && currentUser) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            currentUser.avatar = e.target.result;
+            localStorage.setItem(`user_${currentUser.email}`, JSON.stringify(currentUser));
+            localStorage.setItem('loggedUser', JSON.stringify(currentUser));
+            updateUI();
+        };
+        reader.readAsDataURL(file);
+    }
 }
