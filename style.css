@@ -1,13 +1,13 @@
 /* --- TOKENS DE DESIGN PREMIUM --- */
 :root {
-    --primary: #00d4ff;      /* Neon discreto */
+    --primary: #76b0fc;      /* Neon discreto */
     --primary-hover: #00a3cc;
-    --dark: #0e5a41;         /* Preto elegante */
-    --dark-accent: #111215;  /* Escuro de suporte */
-    --sand: #fbf8f3;         /* Tom de areia leve */
+    --dark: #153266;         /* Preto elegante */
+    --dark-accent: #0a0101;  /* Escuro de suporte */
+    --sand: #00727a;         /* Tom de areia leve */
     --white: #ffffff;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass: rgba(255, 255, 255, 0.712);
+    --glass-border: rgba(255, 255, 255, 0.849);
     --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
