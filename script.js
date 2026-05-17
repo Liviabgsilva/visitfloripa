@@ -213,6 +213,9 @@ function renderGrids() {
 
     // Gastronomia
     filterGastronomia('todos');
+
+    // Eventos
+    renderEventos();
 }
 
 // --- FILTROS DE PRAIAS ATUALIZADO ---
