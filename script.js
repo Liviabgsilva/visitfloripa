@@ -460,11 +460,11 @@ function sendChatMessage() {
     input.value = '';
 
     setTimeout(() => {
-        let reply = "Como concierge de luxo, sugiro uma reserva exclusiva no Restaurante Ostradamus ou uma estadia VIP no Villas de Jurerê.";
+        let reply = "Como seu assistente virtual, sugiro uma reserva exclusiva no Restaurante Ostradamus ou uma estadia VIP no Villas de Jurerê.";
         if (userText.toLowerCase().includes('praia')) {
             reply = "A Praia Mole é perfeita para agitação e desportos, enquanto a Lagoinha do Leste oferece privacidade total e natureza intocada.";
         } else if (userText.toLowerCase().includes('reserva') || userText.toLowerCase().includes('hotel')) {
-            reply = "Posso contactar os nossos parceiros VIP de imediato para garantir a melhor suite para si.";
+            reply = "Posso contactar os nossos parceiros, e de imediato garantir a melhor suite para Você.";
         }
         body.innerHTML += `<div class="chat-message bot">${reply}</div>`;
         body.scrollTop = body.scrollHeight;

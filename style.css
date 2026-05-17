@@ -28,19 +28,7 @@ body {
     line-height: 1.6;
 }
 
-/* Cursor Customizado */
-#custom-cursor {
-    width: 20px;
-    height: 20px;
-    background: var(--white);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.1s ease;
-    transform: translate(-50%, -50%);
-}
+
 
 /* Ecrã de Carregamento (Loader) */
 #loader {
@@ -79,7 +67,7 @@ body {
 .progress-container {
     width: 250px;
     height: 3px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.281);
     margin: 20px auto 0;
     border-radius: 10px;
     overflow: hidden;
@@ -99,7 +87,7 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 25px 5%;
-    background: linear-gradient(to bottom, rgba(7, 7, 8, 0.9), transparent);
+    background: linear-gradient(to bottom, rgba(253, 253, 255, 0.9), transparent);
     transition: var(--transition);
 }
 
@@ -462,7 +450,7 @@ body {
 }
 
 .btn-fav:hover, .btn-fav.active {
-    color: #ff4a5a;
+    color: #faf9f9;
 }
 
 /* Filtros */
@@ -664,7 +652,7 @@ body {
 .status-indicator {
     width: 8px;
     height: 8px;
-    background-color: #00ff66;
+    background-color: #5db9c9;
     border-radius: 50%;
     box-shadow: 0 0 8px #00ff66;
 }
@@ -1237,8 +1225,8 @@ body {
 
 .btn-delete-account {
     background: rgba(255, 74, 90, 0.1);
-    color: #ff4a5a;
-    border: 1px solid #ff4a5a;
+    color: #faf5f6;
+    border: 1px solid #f7f3f3;
 }
 
 .btn-delete-account:hover {
@@ -1248,7 +1236,7 @@ body {
 .btn-logout {
     width: 100%;
     background: rgba(255, 74, 90, 0.1) !important;
-    color: #ff4a5a !important;
+    color: #fcfafa !important;
     margin-top: 20px;
 }
 
