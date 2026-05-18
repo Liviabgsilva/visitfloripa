@@ -1,134 +1,136 @@
-<!DOCTYPE html>
-<html lang="pt-pt">
+// ...existing code...
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floripando | Magia da Ilha</title>
-    
-    <!-- Tipografia e Ícones -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Estilos Customizados -->
-    <link rel="stylesheet" href="style.css">
-    
+    <!-- ...existing code... -->
     <!-- Bibliotecas de Animação -->
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Estilos rápidos para Contacto, Eventos e Listagens (pode mover para style.css) -->
+    <style>
+        /* Contact */
+        .contact-card { display:flex; gap:28px; padding:28px; max-width:1100px; width:100%; border-radius:12px; box-shadow:0 6px 30px rgba(10,10,10,0.12); }
+        .contact-info { flex:1; min-width:260px; }
+        .contact-info h2 { margin:0 0 8px; font-size:1.6rem; }
+        .contact-info .contact-item { display:flex; align-items:center; gap:10px; margin:10px 0; color:#444; }
+        .contact-form { flex:1; display:flex; flex-direction:column; gap:10px; }
+        .contact-form input, .contact-form textarea { padding:12px 14px; border-radius:8px; border:1px solid #e6e6e6; background:rgba(255,255,255,0.9); }
+        .btn-submit { background:#0077cc; color:#fff; border:none; padding:12px 16px; border-radius:8px; cursor:pointer; width:180px; align-self:flex-end; }
+
+        /* Eventos */
+        .events-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; margin-top:18px; }
+        .event-card { padding:16px; border-radius:12px; background:linear-gradient(180deg,#ffffff,#fbfbfb); box-shadow:0 6px 18px rgba(20,20,20,0.06); }
+        .event-title { margin:0 0 8px; font-size:1.1rem; }
+        .event-meta { margin:6px 0; color:#555; font-size:0.95rem; }
+
+        /* Praias */
+        .beach-category { margin-bottom:18px; }
+        .beach-category h3 { margin-bottom:6px; font-size:1.05rem; color:#0b3d91; }
+        .beach-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:8px; }
+        .beach-list li { padding:8px 10px; border-radius:8px; background:#fff; border:1px solid #eef3ff; color:#222; }
+
+        /* Hospedagem */
+        .hotel-category { margin-bottom:16px; }
+        .hotel-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
+        .hotel-card { padding:12px; border-radius:10px; background:#fff; border:1px solid #eee; }
+
+        /* Gastronomia */
+        .restaurant-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; }
+        .restaurant-card { padding:12px; border-radius:10px; background:#fff; border:1px solid #efeaea; }
+
+        /* Responsivo */
+        @media (max-width:800px) {
+            .contact-card { flex-direction:column; padding:18px; }
+            .btn-submit { width:100%; }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Cursor Personalizado -->
-    <div id="custom-cursor"></div>
-
-    <!-- Ecrã de Carregamento (Loader) -->
-    <div id="loader">
-        <div class="loader-content">
-            <h1 class="logo-text">FLORI<span>PANDO</span></h1>
-            <p class="loader-sub">A carregar a melhor experiência...</p>
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Barra de Navegação Fixa (Glassmorphism) -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo" onclick="showView('home')">
-                FLORIPA<span>PANDO</span>
-            </div>
-            
-            <ul class="nav-menu">
-                <li><a href="javascript:void(0)" onclick="showView('Home')">Início</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Praias')">Praias</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Hospedagem')">Hospedagem</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Gastronomia')">Gastronomia</a></li>
-                <li><a href="javascript:void(0)" onclick="showView('Contato')">Contacto</a></li>
-            </ul>
-
-            <div class="nav-actions">
-                <!-- Botões de Autenticação -->
-                <div id="nav-auth">
-                    <button class="btn-login-trigger" onclick="showView('login')">Entrar</button>
-                </div>
-                <!-- Perfil do Utilizador (Oculto inicialmente) -->
-                <div id="user-nav" class="user-profile-nav hidden" onclick="showView('perfil')">
-                    <span id="user-nav-name">Olá, Viajante</span>
-                    <img id="user-nav-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100" alt="Avatar do Utilizador">
-                </div>
-            </div>
-
-            <!-- Hamburguer para Mobile -->
-            <div class="menu-toggle" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Menu Mobile Lateral -->
-    <div id="mobile-menu" class="glass">
-        <ul class="mobile-nav-links">
-            <li><a href="javascript:void(0)" onclick="showView('Home'); toggleMobileMenu()">Início</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Praias'); toggleMobileMenu()">Praias</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Hospedagem'); toggleMobileMenu()">Hospedagem</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Gastronomia'); toggleMobileMenu()">Gastronomia</a></li>
-            <li><a href="javascript:void(0)" onclick="showView('Contato'); toggleMobileMenu()">Contacto</a></li>
-        </ul>
-    </div>
-
-    <!-- ÁREA DE CONTEÚDO DINÂMICO -->
-    <main id="main-content">
-
-        <!-- PÁGINA INICIAL (HOME) -->
-        <section id="view-home" class="view active">
-            <div class="hero">
-                <div class="hero-overlay"></div>
-                <div class="hero-content">
-                    <h3 class="reveal">Venha conhecer as maravilhas da Ilha</h3>
-                    <h1 class="reveal">Sinta a Magia de <br>Florianópolis</h1>
-                    <p class="reveal-delay">Descubra refúgios exclusivos, gastronomia premiada e praias paradisíacas no sul do Brasil.</p>
-                    <div class="search-bar reveal-delay">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="main-search-input" placeholder="O que deseja explorar hoje? (ex: Jurerê, Ostradamus...)">
-                        <button onclick="executeSearch()">Explorar</button>
-                    </div>
-                </div>
-                <div class="scroll-indicator" onclick="scrollToSection('destinos-populares')">
-                    <span>Deslizar</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-
-            <!-- Destinos Populares -->
-            <section id="destinos-populares" class="section-padding">
-                <div class="container">
-                    <header class="section-header">
-                        <h4 class="subtitle">Curadoria de Prestígio</h4>
-                        <h2 class="title">Destinos Populares</h2>
-                    </header>
-                    <div class="grid" id="destinos-grid">
-                        <!-- Gerado Dinamicamente via JS -->
-                    </div>
-                </div>
-            </section>
-        </section>
+<!-- ...existing code... -->
 
         <!-- PÁGINA DE PRAIAS -->
-        <section id="view-praias" class="view section-padding">
+        <section id="view-praia" class="view section-padding">
             <div class="container">
                 <header class="section-header">
                     <h4 class="subtitle">Águas de Cristal</h4>
                     <h2 class="title">Praias Cinematográficas</h2>
                     <p class="section-desc">Filtre as melhores enseadas da ilha consoante o seu estilo de viagem.</p>
                 </header>
-                <div class="filter-group">
-                    <button class="filter-btn active" onclick="filterPraias('todas')">Todas</button>
-                    <button class="filter-btn" onclick="filterPraias('Norte')">Norte da Ilha</button>
-                    <button class="filter-btn" onclick="filterPraias('Sul')">Sul da Ilha</button>
-                    <button class="filter-btn" onclick="filterPraias('Leste')">Leste</button>
+
+                <div class="beach-category">
+                    <h3>Norte da Ilha</h3>
+                    <ul class="beach-list">
+                        <li>Praia de Canasvieiras</li>
+                        <li>Praia de Jurerê Tradicional</li>
+                        <li>Praia de Jurerê Internacional</li>
+                        <li>Praia da Daniela</li>
+                        <li>Praia do Forte</li>
+                        <li>Praia da Cachoeira do Bom Jesus</li>
+                        <li>Praia de Ponta das Canas</li>
+                        <li>Praia da Lagoinha do Norte</li>
+                        <li>Praia Brava</li>
+                        <li>Praia dos Ingleses</li>
+                        <li>Praia do Santinho</li>
+                        <li>Praia de Sambaqui</li>
+                        <li>Praia de Santo Antônio de Lisboa</li>
+                        <li>Praia de Cacupé</li>
+                    </ul>
                 </div>
-                <div class="grid" id="praias-grid">
-                    <!-- Gerado Dinamicamente via JS -->
+
+                <div class="beach-category">
+                    <h3>Leste da Ilha</h3>
+                    <ul class="beach-list">
+                        <li>Praia Mole</li>
+                        <li>Praia da Joaquina</li>
+                        <li>Praia da Galheta</li>
+                        <li>Praia da Barra da Lagoa</li>
+                        <li>Prainha da Barra</li>
+                        <li>Praia do Moçambique</li>
+                        <li>Praia do Gravatá</li>
+                        <li>Lagoa da Conceição</li>
+                    </ul>
+                </div>
+
+                <div class="beach-category">
+                    <h3>Sul da Ilha</h3>
+                    <ul class="beach-list">
+                        <li>Praia do Campeche</li>
+                        <li>Praia da Armação</li>
+                        <li>Praia do Matadeiro</li>
+                        <li>Praia do Morro das Pedras</li>
+                        <li>Praia da Lagoinha do Leste</li>
+                        <li>Praia do Pântano do Sul</li>
+                        <li>Praia dos Açores</li>
+                        <li>Praia da Solidão</li>
+                        <li>Praia do Saquinho</li>
+                        <li>Praia de Naufragados</li>
+                        <li>Praia da Tapera</li>
+                        <li>Ribeirão da Ilha</li>
+                    </ul>
+                </div>
+
+                <div class="beach-category">
+                    <h3>Região Continental</h3>
+                    <ul class="beach-list">
+                        <li>Praia do Itaguaçu</li>
+                        <li>Praia das Palmeiras</li>
+                        <li>Praia do Meio</li>
+                        <li>Praia do Bom Abrigo</li>
+                        <li>Praia da Saudade</li>
+                    </ul>
+                </div>
+
+                <div class="beach-category">
+                    <h3>Outras e ilhas</h3>
+                    <ul class="beach-list">
+                        <li>Ilha do Campeche</li>
+                        <li>Praia da Caieira da Barra do Sul</li>
+                        <li>Praia da Figueira</li>
+                        <li>Praia do Forte de Ratones</li>
+                        <li>Praia da Costa da Lagoa</li>
+                        <li>Praia da Solidãozinha</li>
+                        <li>Praia da Base Aérea</li>
+                        <li>Praia da Sepultura</li>
+                        <li>Praia da Armação do Pântano do Sul</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -139,10 +141,45 @@
                 <header class="section-header">
                     <h4 class="subtitle">Refúgios de Sonho</h4>
                     <h2 class="title">Hospedagens Exclusivas</h2>
-                    <p class="section-desc">Hotéis boutique, resorts ecológicos e villas luxuosas de frente para o mar.</p>
+                    <p class="section-desc">Hotéis no Centro (práticos para negócios e mobilidade), hostels e pousadas recomendadas.</p>
                 </header>
-                <div class="grid" id="hospedagem-grid">
-                    <!-- Gerado Dinamicamente via JS -->
+
+                <div class="hotel-category">
+                    <h3>Hotéis no Centro</h3>
+                    <div class="hotel-grid">
+                        <div class="hotel-card"><strong>Majestic Palace Hotel</strong> — hotel premium na Beira-Mar Norte, ótimo para conforto e vista.</div>
+                        <div class="hotel-card"><strong>Blue Tree Premium Florianópolis</strong> — moderno e bem localizado no centro.</div>
+                        <div class="hotel-card"><strong>Porto da Ilha Hotel</strong> — excelente custo-benefício para explorar a cidade.</div>
+                        <div class="hotel-card"><strong>ibis Florianopolis</strong> — opção econômica e funcional.</div>
+                        <div class="hotel-card"><strong>Castelmar Hotel</strong> — tradicional e próximo da rodoviária.</div>
+                        <div class="hotel-card"><strong>Rede Andrade Cecomtur Hotel</strong> — econômico no centro histórico.</div>
+                        <div class="hotel-card"><strong>Rede Andrade Floph Hotel</strong> — opção simples para estadias curtas.</div>
+                    </div>
+                </div>
+
+                <div class="hotel-category">
+                    <h3>Hostels e hospedagens econômicas</h3>
+                    <div class="hotel-grid">
+                        <div class="hotel-card"><strong>Hostel Manjericão</strong> — Lagoa da Conceição, muito procurado por mochileiros.</div>
+                        <div class="hotel-card"><strong>Geckos Hostel</strong> — clima jovem perto da vida noturna da Lagoa.</div>
+                        <div class="hotel-card"><strong>Floripa Surf Hostel</strong> — ideal para surfistas no Campeche.</div>
+                        <div class="hotel-card"><strong>Floripa Hostel</strong> — opção central com boa mobilidade.</div>
+                        <div class="hotel-card"><strong>Youkoso Hostel</strong> — hostel simples e econômico no centro.</div>
+                        <div class="hotel-card"><strong>Floripa Beach House</strong> — vibe praia e natureza no Rio Tavares.</div>
+                    </div>
+                </div>
+
+                <div class="hotel-category">
+                    <h3>Pousadas recomendadas</h3>
+                    <div class="hotel-grid">
+                        <div class="hotel-card"><strong>Pousada Ilha Faceira</strong> — Campeche, muito bem avaliada.</div>
+                        <div class="hotel-card"><strong>Pousada Lagoa da Chica</strong> — Praia do Campeche, tranquila e próxima da praia.</div>
+                        <div class="hotel-card"><strong>Pousada Marques Floripa</strong> — boa opção econômica perto do aeroporto.</div>
+                        <div class="hotel-card"><strong>Pousada Cabanas Duna Sol</strong> — Lagoa/Joaquina, ótima para surfistas.</div>
+                        <div class="hotel-card"><strong>Pousada Barra da Lagoa</strong> — ótima para quem quer praia e trilhas.</div>
+                        <div class="hotel-card"><strong>Mar e Mar Florianópolis</strong> — Ingleses, perto da praia e comércio.</div>
+                        <div class="hotel-card"><strong>Pousada Mar de Dentro</strong> — Santo Antônio de Lisboa, charmosa e gastronômica.</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -152,17 +189,44 @@
             <div class="container">
                 <header class="section-header">
                     <h4 class="subtitle">Experiências Sensoriais</h4>
-                    <h2 class="title">Alta Gastronomia</h2>
-                    <p class="section-desc">Dos tradicionais engenhos de ostras do Ribeirão aos restaurantes galardoados de Jurerê.</p>
+                    <h2 class="title">Alta Gastronomia & Sabores Típicos</h2>
+                    <p class="section-desc">Seleção por categoria: frutos do mar, italianos, asiáticos e opções econômicas.</p>
                 </header>
+
                 <div class="filter-group">
                     <button class="filter-btn active" onclick="filterGastronomia('todos')">Todos</button>
                     <button class="filter-btn" onclick="filterGastronomia('frutos-do-mar')">Frutos do Mar</button>
-                    <button class="filter-btn" onclick="filterGastronomia('italiana')">Italiana</button>
-                    <button class="filter-btn" onclick="filterGastronomia('contemporanea')">Contemporânea</button>
+                    <button class="filter-btn" onclick="filterGastronomia('italiana')">Italianos/Contemporâneos</button>
+                    <button class="filter-btn" onclick="filterGastronomia('asiaticos')">Japoneses/Asiáticos</button>
+                    <button class="filter-btn" onclick="filterGastronomia('casual')">Casual & Econômico</button>
                 </div>
-                <div class="grid" id="gastronomia-grid">
-                    <!-- Gerado Dinamicamente via JS -->
+
+                <div class="restaurant-list" id="gastronomia-grid">
+                    <!-- Frutos do mar e comida típica -->
+                    <div class="restaurant-card"><strong>Ostradamus Restaurante</strong> — clássico do Ribeirão da Ilha, famoso por ostras frescas e clima açoriano.</div>
+                    <div class="restaurant-card"><strong>Restaurante Rancho de Canoa</strong> — Barra da Lagoa, sequência de camarão e peixes.</div>
+                    <div class="restaurant-card"><strong>O Timoneiro</strong> — tradicional na Barra da Lagoa, frutos do mar.</div>
+                    <div class="restaurant-card"><strong>Marisqueira Sintra</strong> — cozinha portuguesa e bacalhau em Santo Antônio de Lisboa.</div>
+                    <div class="restaurant-card"><strong>Antonio's Restaurante</strong> — sofisticado, reconhecido por frutos do mar.</div>
+                    <div class="restaurant-card"><strong>Delícias do Mar</strong> — Sambaqui, vista para o mar.</div>
+                    <div class="restaurant-card"><strong>Boka's Beach</strong> — pé na areia no norte da ilha.</div>
+
+                    <!-- Italianos e contemporâneos -->
+                    <div class="restaurant-card"><strong>Artusi Restaurante</strong> — italiano reputado na cidade.</div>
+                    <div class="restaurant-card"><strong>El Señor Asador de Brasa</strong> — carnes na brasa, ambiente moderno.</div>
+                    <div class="restaurant-card"><strong>Restaurante Le Tuá</strong> — alta gastronomia francesa/contemporânea.</div>
+                    <div class="restaurant-card"><strong>Osli Restaurante</strong> — cozinha refinada no centro.</div>
+                    <div class="restaurant-card"><strong>Bonomi Restaurante</strong> — destaque recente, finalista Prêmio Prazeres da Mesa 2026.</div>
+
+                    <!-- Japoneses / Asiáticos -->
+                    <div class="restaurant-card"><strong>Jun Kappô Sushi</strong> — muito bem avaliado.</div>
+                    <div class="restaurant-card"><strong>Gatae Restaurante Japonês</strong> — destaque frequente.</div>
+                    <div class="restaurant-card"><strong>NaKaixa Sushi</strong> — recomendado pelos moradores.</div>
+
+                    <!-- Econômicos / Casuais -->
+                    <div class="restaurant-card"><strong>Restaurante Mariá</strong> — almoço elogiado no centro.</div>
+                    <div class="restaurant-card"><strong>Restaurante Comer Bem</strong> — comida simples e barata no centro.</div>
+                    <div class="restaurant-card"><strong>Didge Steakhouse Pub</strong> — steakhouse australiana popular.</div>
                 </div>
             </div>
         </section>
@@ -181,6 +245,17 @@
                         <i class="fas fa-envelope"></i>
                         <span>concierge@floripapremium.pt</span>
                     </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Florianópolis, SC — Brasil</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Atendimento: Seg–Sex 09:00–18:00</span>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <a href="https://wa.me/5548996410535" target="_blank" class="btn" style="background:#25D366;color:white;padding:8px 12px;border-radius:8px;text-decoration:none;">Abrir WhatsApp</a>
+                    </div>
                 </div>
                 <form class="contact-form" onsubmit="handleContactSubmit(event)">
                     <input type="text" id="contact-name" placeholder="Nome Completo" required>
@@ -191,195 +266,55 @@
             </div>
         </section>
 
-        <!-- PÁGINA DE LOGIN -->
-        <section id="view-login" class="view flex-center">
-            <div class="auth-card glass">
-                <h2>Aceder à Experiência</h2>
-                <p class="auth-sub">Faça login para gerir as suas reservas e favoritos.</p>
-                
-                <div class="auth-inputs">
-                    <div class="input-wrapper">
-                        <i class="far fa-envelope"></i>
-                        <input type="email" id="login-email" placeholder="E-mail de utilizador">
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="login-pass" placeholder="Palavra-passe">
-                    </div>
-                </div>
+        <!-- PÁGINA DE EVENTOS -->
+        <section id="view-eventos" class="view section-padding">
+            <div class="container">
+                <header class="section-header">
+                    <h4 class="subtitle">Vida Cultural</h4>
+                    <h2 class="title">Eventos em Florianópolis</h2>
+                    <p class="section-desc">Agenda selecionada com eventos atuais e de interesse. (Data — Hora — Local)</p>
+                </header>
 
-                <button class="btn-auth-submit" onclick="authAction('login')">Entrar na Ilha</button>
-                <p class="auth-switch">Ainda não é membro? <a href="javascript:void(0)" onclick="showView('cadastro')">Crie a sua conta</a></p>
-            </div>
-        </section>
-
-        <!-- PÁGINA DE CADASTRO -->
-        <section id="view-cadastro" class="view flex-center">
-            <div class="auth-card glass">
-                <h2>Tornar-se Membro VIP</h2>
-                <p class="auth-sub">Registe os seus dados e ganhe acesso exclusivo ao planeador de rotas.</p>
-
-                <div class="auth-inputs">
-                    <div class="input-wrapper">
-                        <i class="far fa-user"></i>
-                        <input type="text" id="reg-name" placeholder="Nome Completo">
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="far fa-envelope"></i>
-                        <input type="email" id="reg-email" placeholder="Endereço de E-mail">
-                    </div>
-                    <div class="input-wrapper">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" id="reg-pass" placeholder="Palavra-passe">
-                    </div>
-                </div>
-
-                <button class="btn-auth-submit" onclick="authAction('register')">Finalizar Registo</button>
-                <p class="auth-switch">Já possui conta? <a href="javascript:void(0)" onclick="showView('login')">Fazer Login</a></p>
-            </div>
-        </section>
-
-        <!-- DASHBOARD DO UTILIZADOR (PERFIL) -->
-        <section id="view-perfil" class="view section-padding">
-            <div class="container profile-layout">
-                <aside class="profile-sidebar glass">
-                    <div class="profile-header">
-                        <div class="avatar-edit-wrapper">
-                            <img id="profile-display-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200" alt="Foto de Perfil">
-                            <label for="avatar-upload" class="avatar-overlay">
-                                <i class="fas fa-camera"></i>
-                            </label>
-                            <input type="file" id="avatar-upload" style="display: none;" onchange="handleAvatarChange(event)">
-                        </div>
-                        <h3 id="profile-display-name">Nome do Utilizador</h3>
-                        <p id="profile-display-email">email@exemplo.com</p>
-                        <span class="user-badge">Cliente Premium</span>
+                <div class="events-list" id="events-list">
+                    <div class="event-card glass">
+                        <h3 class="event-title">Feira Gastronômica Mercado da Ilha</h3>
+                        <p class="event-meta"><strong>Data:</strong> 23/05/2026 — <strong>Hora:</strong> 11:00 — 17:00</p>
+                        <p class="event-meta"><strong>Local:</strong> Mercado Público de Florianópolis</p>
                     </div>
 
-                    <div class="profile-nav-menu">
-                        <button class="tab-btn active" onclick="switchProfileTab('dados')"><i class="fas fa-id-card"></i> Meus Dados</button>
-                        <button class="tab-btn" onclick="switchProfileTab('favoritos')"><i class="fas fa-heart"></i> Favoritos</button>
-                        <button class="tab-btn" onclick="switchProfileTab('viagens')"><i class="fas fa-plane"></i> Histórico de Viagens</button>
-                        <button class="tab-btn btn-logout" onclick="authAction('logout')"><i class="fas fa-sign-out-alt"></i> Encerrar Sessão</button>
-                    </div>
-                </aside>
-
-                <div class="profile-content-area glass">
-                    <!-- Aba: Dados -->
-                    <div id="tab-dados" class="tab-content active">
-                        <h2>Dados Pessoais</h2>
-                        <p class="tab-sub">Atualize as suas informações de contacto e preferências de viagem.</p>
-                        <div class="profile-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Nome Completo</label>
-                                    <input type="text" id="edit-name">
-                                </div>
-                                <div class="form-group">
-                                    <label>Telefone / WhatsApp</label>
-                                    <input type="text" id="edit-phone" value="(48) 99641 0535">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Cidade / Localização</label>
-                                    <input type="text" id="edit-location" placeholder="Ex: Lisboa, Portugal">
-                                </div>
-                                <div class="form-group">
-                                    <label>Tipo de Viagem Preferido</label>
-                                    <select id="edit-travel-style">
-                                        <option value="luxo">Luxo & Conforto</option>
-                                        <option value="aventura">Aventura & Natureza</option>
-                                        <option value="gastronomico">Roteiro Gastronómico</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-actions">
-                                <button class="btn-save-profile" onclick="updateProfile()">Guardar Alterações</button>
-                                <button class="btn-delete-account" onclick="deleteAccount()">Eliminar Perfil</button>
-                            </div>
-                        </div>
+                    <div class="event-card glass">
+                        <h3 class="event-title">Concerto ao Pôr do Sol — Orquestra da Cidade</h3>
+                        <p class="event-meta"><strong>Data:</strong> 30/05/2026 — <strong>Hora:</strong> 18:30</p>
+                        <p class="event-meta"><strong>Local:</strong> Praia do Campeche (Palco Principal)</p>
                     </div>
 
-                    <!-- Aba: Favoritos -->
-                    <div id="tab-favoritos" class="tab-content">
-                        <h2>Os Meus Favoritos</h2>
-                        <p class="tab-sub">Lista de desejos e locais que pretende visitar brevemente.</p>
-                        <div class="grid" id="favorites-grid">
-                            <!-- Injetado via JS -->
-                        </div>
+                    <div class="event-card glass">
+                        <h3 class="event-title">Festival de Cinema Praia</h3>
+                        <p class="event-meta"><strong>Data:</strong> 05/06/2026 — <strong>Hora:</strong> 20:00</p>
+                        <p class="event-meta"><strong>Local:</strong> Praça Armação</p>
                     </div>
 
-                    <!-- Aba: Histórico -->
-                    <div id="tab-viagens" class="tab-content">
-                        <h2>Histórico de Viagens</h2>
-                        <p class="tab-sub">Consulte as suas reservas confirmadas e aventuras passadas.</p>
-                        <div class="history-list" id="history-list">
-                            <!-- Injetado via JS -->
-                        </div>
+                    <div class="event-card glass">
+                        <h3 class="event-title">Passeio de Observação de Baleias</h3>
+                        <p class="event-meta"><strong>Data:</strong> 12/06/2026 — <strong>Hora:</strong> 09:00</p>
+                        <p class="event-meta"><strong>Local:</strong> Trapiche do Campeche</p>
+                    </div>
+
+                    <div class="event-card glass">
+                        <h3 class="event-title">Feira de Artesanato da Lagoa</h3>
+                        <p class="event-meta"><strong>Data:</strong> 02/06/2026 — <strong>Hora:</strong> 10:00 — 16:00</p>
+                        <p class="event-meta"><strong>Local:</strong> Lagoa da Conceição</p>
+                    </div>
+
+                    <div class="event-card glass">
+                        <h3 class="event-title">Noite de Jazz na Beira-Mar</h3>
+                        <p class="event-meta"><strong>Data:</strong> 18/06/2026 — <strong>Hora:</strong> 20:30</p>
+                        <p class="event-meta"><strong>Local:</strong> Avenida Beira-Mar Norte</p>
                     </div>
                 </div>
             </div>
         </section>
-
-    </main>
-
-    <!-- Chat Concierge Inteligente (IA) -->
-    <div id="chat-widget">
-        <div id="chat-window" class="glass hidden">
-            <div class="chat-header">
-                <div class="chat-header-title">
-                    <div class="status-indicator"></div>
-                    <span>Concierge Premium</span>
-                </div>
-                <button class="btn-close-chat" onclick="toggleChat()"><i class="fas fa-times"></i></button>
-            </div>
-            <div id="chat-body" class="chat-body">
-                <div class="chat-message bot">
-                    Olá! Sou o seu concierge virtual privado. Posso ajudar a encontrar o melhor restaurante ou organizar as suas reservas em Florianópolis hoje?
-                </div>
-            </div>
-            <div class="chat-footer">
-                <input type="text" id="chat-input" placeholder="Escreva a sua mensagem..." onkeypress="handleChatKey(event)">
-                <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-        <button id="chat-toggle" onclick="toggleChat()">
-            <i class="fas fa-concierge-bell"></i>
-        </button>
-    </div>
-
-    <!-- Rodapé Premium -->
-    <footer class="footer-premium">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h2>FLORIPA<span>PREMIUM</span></h2>
-                <p>A curadoria definitiva para quem exige o extraordinário. Viva a Ilha de Santa Catarina na sua máxima sofisticação.</p>
-                <div class="footer-socials">
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4>Descobrir</h4>
-                <ul>
-                    <li><a href="javascript:void(0)" onclick="showView('praias')">As Praias</a></li>
-                    <li><a href="javascript:void(0)" onclick="showView('hospedagem')">Onde Ficar</a></li>
-                    <li><a href="javascript:void(0)" onclick="showView('gastronomia')">Gastronomia</a></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h4>Reservas e Suporte</h4>
-                <p><i class="fas fa-phone-alt"></i> (48) 99641 0535</p>
-                <p><i class="fas fa-envelope"></i> concierge@floripapremium.pt</p>
-                <p class="footer-local">Florianópolis, SC — Brasil</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Floripa Premium. Desenvolvido com padrões de luxo internacionais. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-<script src="script.js"></script>
+// ...existing code...
 </body>
 </html>
+// ...existing code...
