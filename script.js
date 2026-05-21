@@ -58,21 +58,55 @@ const DATA = {
         { nome: "Praia do Bom Abrigo", desc: "Reduto charmoso, seguro e bem cuidado, ótimo para contemplar a ponte Hercílio Luz ao longe.", regiao: "Centro", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" }
     ],
     hospedagem: [
-        { nome: "Ilha Resort & Spa", local: "Ponta das Canas", preco: "R$ 1.650 / noite", rating: 5, desc: "Sofisticação de padrão internacional à beira-mar com spa premiado.", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800" },
-        { nome: "Villas de Jurerê Boutique", local: "Jurerê Internacional", preco: "R$ 2.100 / noite", rating: 5, desc: "Exclusividade absoluta e atendimento personalizado de mordomo.", img: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800" }
+        { nome: "Majestic Palace Hotel", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Porto da Ilha Hotel", local: "Beira-Mar", preco: "A consultar", rating: 4 },
+        { nome: "Blue Tree Premium Florianópolis", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Castelmar Hotel", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "ibis Florianopolis", local: "Centro", preco: "A consultar", rating: 3 },
+        { nome: "LK DESIGN HOTEL FLORIANOPOLIS", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Mercure Florianópolis", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Costão do Santinho Resort", local: "Norte (Costão)", preco: "A consultar", rating: 5 },
+        { nome: "Slaviero", local: "Vários", preco: "A consultar", rating: 4 },
+        { nome: "Valerim Plaza Hotel", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Novotel Florianopolis", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Hotel Intercity Florianópolis", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Faial Prime Suites", local: "Centro", preco: "A consultar", rating: 4 },
+        { nome: "Ingleses Palace Hotel", local: "Ingleses", preco: "A consultar", rating: 4 },
+        { nome: "Innbox Hotel & Hostel - Centro", local: "Centro", preco: "A consultar", rating: 3 },
+        { nome: "Hotel Slaviero Ingleses Convention", local: "Ingleses", preco: "A consultar", rating: 4 },
+        { nome: "Rio Branco Hotel", local: "Centro", preco: "A consultar", rating: 3 },
+        { nome: "Ingleses Park Hotel", local: "Ingleses", preco: "A consultar", rating: 4 }
     ],
     gastronomia: [
-        { nome: "Ostradamus", cat: "frutos-do-mar", local: "Ribeirão da Ilha", desc: "Ostras vivas depuradas e o melhor polvo grelhado num trapiche histórico.", preco: "R$ 180 - R$ 350", img: "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800" },
-        { nome: "Artusi Ristorante", cat: "italiana", local: "Centro", desc: "Alta culinária italiana com toques inovadores pelo chef de prestígio.", preco: "R$ 150 - R$ 280", img: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800" },
-        { nome: "Jay Bistrô", cat: "contemporanea", local: "Jurerê", desc: "Menu de autor sofisticado e harmonizações com grandes rótulos mundiais.", preco: "R$ 220 - R$ 450", img: "https://images.unsplash.com/photo-1550966841-3ee7adac1ad4?auto=format&fit=crop&w=800" }
+        { nome: "Ostradamus Restaurante", cat: "frutos-do-mar", local: "Ribeirão da Ilha", desc: "Especialista em ostras e frutos do mar frescos.", preco: "R$ 80 - R$ 250" },
+        { nome: "La Cave Gastronomia e Vinhos", cat: "vinhos", local: "Centro", desc: "Carta de vinhos selecionada com pratos de autor.", preco: "R$ 120 - R$ 350" },
+        { nome: "Taberna Ibérica", cat: "iberica", local: "Centro Histórico", desc: "Sabores da Península Ibérica com menu degustação.", preco: "R$ 90 - R$ 280" },
+        { nome: "Píer 54 Restaurante", cat: "frutos-do-mar", local: "Beira-Mar", desc: "Cozinha contemporânea com vista para a baía.", preco: "R$ 100 - R$ 300" },
+        { nome: "Restaurante Olivia Cucina", cat: "italiana", local: "Jurerê", desc: "Tradição italiana com massa fresca e selecção de vinhos.", preco: "R$ 80 - R$ 220" },
+        { nome: "Los Troncos Parrilla Uruguaya & Getúlio – Bar Secreto", cat: "parrilla", local: "Centro", desc: "Cortes argentinos/uruguaios e ambiente intimista.", preco: "R$ 120 - R$ 400" },
+        { nome: "Guacamole Cocina Mexicana", cat: "mexicana", local: "Centro", desc: "Comida mexicana autêntica e cocktails proprietários.", preco: "R$ 50 - R$ 150" },
+        { nome: "Trattoria Carbone", cat: "italiana", local: "Centro", desc: "Clássicos italianos com forno à lenha.", preco: "R$ 90 - R$ 240" },
+        { nome: "Osli Restaurante", cat: "contemporanea", local: "Centro", desc: "Menu de autor e sabores regionais reinventados.", preco: "R$ 100 - R$ 300" },
+        { nome: "O Timoneiro", cat: "frutos-do-mar", local: "Pântano do Sul", desc: "Peixes frescos e ambiente ribeirinho.", preco: "R$ 70 - R$ 200" },
+        { nome: "Coco Bambu", cat: "frutos-do-mar", local: "Beira-Mar", desc: "Rede famosa por pratos compartilháveis e sabores tropicais.", preco: "R$ 100 - R$ 350" },
+        { nome: "Restaurante Rancho de Canoa", cat: "regional", local: "Sul da Ilha", desc: "Comida regional e ambiente de rancho à beira-mar.", preco: "R$ 60 - R$ 180" },
+        { nome: "Ponta das Caranhas", cat: "regional", local: "Norte", desc: "Pequeno restaurante local com frutos do mar.", preco: "R$ 60 - R$ 160" },
+        { nome: "Artusi Restaurante", cat: "italiana", local: "Centro", desc: "Alta cozinha italiana com carta de vinhos selecionada.", preco: "R$ 150 - R$ 320" },
+        { nome: "Bonomi Restaurante", cat: "italiana", local: "Centro", desc: "Tradição italiana com ingredientes locais.", preco: "R$ 100 - R$ 260" },
+        { nome: "Rancho Açoriano", cat: "regional", local: "Ribeirão da Ilha", desc: "Sabores açorianos e mariscos frescos.", preco: "R$ 70 - R$ 200" },
+        { nome: "Bar do Vadinho", cat: "bar", local: "Pântano do Sul", desc: "Clássicos locais e boa carta de petiscos.", preco: "R$ 30 - R$ 120" },
+        { nome: "Gatae  Restaurante Japonês", cat: "japonesa", local: "Centro", desc: "Sushi e pratos quentes preparados à moda tradicional.", preco: "R$ 80 - R$ 280" },
+        { nome: "Jun Kappô Sushi", cat: "japonesa", local: "Centro", desc: "Kappô com foco em peixe fresco e técnica apurada.", preco: "R$ 120 - R$ 380" },
+        { nome: "Il Caravaggio", cat: "italiana", local: "Centro", desc: "Clássicos italianos e ambiente intimista.", preco: "R$ 110 - R$ 300" },
+        { nome: "Sattoru Sushi", cat: "japonesa", local: "Jurerê", desc: "Sushi contemporâneo com ingredientes locais.", preco: "R$ 100 - R$ 320" }
     ],
     eventos: [
-        { nome: "Festival de Comida de Rua", data: "15 de Junho 2026", local: "Praia de Canasvieiras", desc: "Celebração culinária com gastronomia local e internacional.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800" },
-        { nome: "Sunset Music Festival", data: "22 de Junho 2026", local: "Jurerê Internacional", desc: "Música ao vivo com os melhores DJs internacionais durante o pôr do sol.", img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800" },
-        { nome: "Trilha Eco-aventura", data: "28 de Junho 2026", local: "Praia da Lagoinha do Leste", desc: "Expedição guiada pela natureza selvagem da Mata Atlântica.", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800" },
-        { nome: "Campeonato de Surf", data: "05 de Julho 2026", local: "Praia Mole", desc: "Competição internacional de surf com atletas do mundo todo.", img: "https://images.unsplash.com/photo-1502680390467-361b25e5d895?auto=format&fit=crop&w=800" },
-        { nome: "Noite de Arte Contemporânea", data: "12 de Julho 2026", local: "Centro Histórico", desc: "Exposição de arte, performances e instalações interativas.", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800" },
-        { nome: "Passeio de Barco Sunset", data: "19 de Julho 2026", local: "Marina da Barra da Lagoa", desc: "Experiência gastronómica flutuante com vista panorâmica do pôr do sol.", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800" }
+        { nome: "Festival de Comida de Rua", data: "15 de Junho 2026", hora: "12:00 - 22:00", local: "Praia de Canasvieiras", desc: "Celebração culinária com gastronomia local e internacional.", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800" },
+        { nome: "Sunset Music Festival", data: "22 de Junho 2026", hora: "17:30 - 23:00", local: "Jurerê Internacional", desc: "Música ao vivo com DJs nacionais e internacionais durante o pôr do sol.", img: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800" },
+        { nome: "Trilha Eco-aventura", data: "28 de Junho 2026", hora: "08:00 - 14:00", local: "Praia da Lagoinha do Leste", desc: "Expedição guiada pela natureza selvagem da Mata Atlântica.", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800" },
+        { nome: "Campeonato de Surf Florianópolis", data: "05 de Julho 2026", hora: "09:00 - 18:00", local: "Praia Mole", desc: "Competição internacional de surf com atletas do mundo todo.", img: "https://images.unsplash.com/photo-1502680390467-361b25e5d895?auto=format&fit=crop&w=800" },
+        { nome: "Noite de Arte Contemporânea", data: "12 de Julho 2026", hora: "19:00 - 23:00", local: "Centro Histórico", desc: "Exposição de arte, performances e instalações interativas.", img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800" },
+        { nome: "Passeio de Barco Sunset", data: "19 de Julho 2026", hora: "17:00 - 20:00", local: "Marina da Barra da Lagoa", desc: "Experiência gastronómica flutuante com vista panorâmica do pôr do sol.", img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800" }
     ]
 };
 
@@ -196,16 +230,17 @@ function renderGrids() {
     if (hospGrid) {
         hospGrid.innerHTML = '';
         DATA.hospedagem.forEach(h => {
+            const imgUrl = h.img || `https://source.unsplash.com/800x600/?${encodeURIComponent(h.nome)},hotel,florianopolis`;
             hospGrid.innerHTML += `
                 <div class="card">
                     <div class="card-img-wrapper">
-                        <img src="${h.img}" alt="${h.nome}">
+                        <img src="${imgUrl}" alt="${h.nome}">
                         <span class="badge-tag">${h.local}</span>
                     </div>
                     <div class="card-body">
                         <h3>${h.nome}</h3>
-                        <p>${h.desc}</p>
-                        <p style="margin-top: 10px; font-weight: 700; color: var(--primary);">${h.preco}</p>
+                        <p>${h.desc || ''}</p>
+                        <p style="margin-top: 10px; font-weight: 700; color: var(--primary);">${h.preco || ''}</p>
                     </div>
                 </div>`;
         });
@@ -262,10 +297,11 @@ function filterGastronomia(cat) {
     const filtered = cat === 'todos' ? DATA.gastronomia : DATA.gastronomia.filter(g => g.cat === cat);
 
     filtered.forEach(g => {
+        const imgUrl = g.img || `https://source.unsplash.com/800x600/?${encodeURIComponent(g.nome)},restaurant,florianopolis`;
         gastroGrid.innerHTML += `
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="${g.img}" alt="${g.nome}">
+                    <img src="${imgUrl}" alt="${g.nome}">
                     <span class="badge-tag">${g.preco}</span>
                 </div>
                 <div class="card-body">
@@ -286,17 +322,18 @@ function renderEventos() {
 
     eventosGrid.innerHTML = '';
     DATA.eventos.forEach(e => {
+        const imgUrl = e.img || `https://source.unsplash.com/800x600/?${encodeURIComponent(e.nome)},event,florianopolis`;
         eventosGrid.innerHTML += `
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="${e.img}" alt="${e.nome}">
+                    <img src="${imgUrl}" alt="${e.nome}">
                     <span class="badge-tag">Evento</span>
                 </div>
                 <div class="card-body">
                     <h3>${e.nome}</h3>
                     <p>${e.desc}</p>
                     <div class="card-footer" style="display:flex; flex-direction:column; align-items:flex-start; gap:8px;">
-                        <span><i class="fas fa-calendar-alt"></i> ${e.data}</span>
+                        <span><i class="fas fa-calendar-alt"></i> ${e.data} — ${e.hora || ''}</span>
                         <span><i class="fas fa-map-marker-alt"></i> ${e.local}</span>
                         <button class="btn-fav" style="align-self: flex-end; margin-top: 10px;" onclick="toggleFavorite('${e.nome}')"><i class="far fa-heart"></i> Guardar</button>
                     </div>
