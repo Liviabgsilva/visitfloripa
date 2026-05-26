@@ -7,7 +7,7 @@
     --sand: #00727a;         /* Tom de areia leve */
     --white: #ffffff;
     --glass: rgba(255, 255, 255, 0.712);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.849);
     --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -87,7 +87,7 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 25px 5%;
-    background: rgba(7, 7, 8, 0.85);
+    background: linear-gradient(to bottom, rgba(253, 253, 255, 0.9), transparent);
     transition: var(--transition);
 }
 
