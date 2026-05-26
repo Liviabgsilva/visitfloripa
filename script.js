@@ -1,61 +1,61 @@
 // --- DADOS DINÂMICOS DO SITE (MOCK DATA) ---
-const imgGenerica1 = "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800";
-const imgGenerica2 = "https://images.unsplash.com/photo-1535262412227-85541e910204?auto=format&fit=crop&w=800";
-const imgGenerica3 = "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800";
-const imgGenerica4 = "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800";
+const imgGenerica1 = "img/praias/Jurerê.jpg";
+const imgGenerica2 = "img/praias/Jurerê Internacional.jpg";
+const imgGenerica3 = "img/praias/Canasvieiras.jpg";
+const imgGenerica4 = "img/praias/Cachoeira do Bom Jesus.jpg";
 
 const DATA = {
     destinos: [
-        { nome: "Jurerê Internacional", desc: "Luxo, beach clubs sofisticados e mansões à beira-mar.", img: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800", cat: "Norte" },
-        { nome: "Santo Antônio de Lisboa", desc: "Cultura açoriana, arquitetura preservada e o melhor pôr-do-sol.", img: imgGenerica1, cat: "Norte" },
-        { nome: "Praia do Campeche", desc: "Natureza selvagem, ondas perfeitas e a mística Ilha do Campeche.", img: "https://images.unsplash.com/photo-1582291142747-19412953e34b?auto=format&fit=crop&w=800", cat: "Sul" }
+    { nome: "Jurerê Internacional", desc: "Luxo, beach clubs sofisticados e mansões à beira-mar.", img: "img/praias/Jurerê Internacional.jpg", cat: "Norte" },
+    { nome: "Santo Antônio de Lisboa", desc: "Cultura açoriana, arquitetura preservada e o melhor pôr-do-sol.", img: "img/praias/Santo Antônio de Lisboa.jpg", cat: "Norte" },
+    { nome: "Praia do Campeche", desc: "Natureza selvagem, ondas perfeitas e a mística Ilha do Campeche.", img: "img/praias/Praia do Campeche.jpg", cat: "Sul" }
     ],
     praias: [
         // --- NORTE DA ILHA ---
-        { nome: "Jurerê", desc: "Águas calmas e quentes, excelente para famílias com excelente infraestrutura.", regiao: "Norte", img: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?auto=format&fit=crop&w=800", temp: "25°C", lotacao: "Alta" },
-        { nome: "Jurerê Internacional", desc: "Sinónimo de luxo, mansões e beach clubs exclusivos com festas sunset.", regiao: "Norte", img: imgGenerica1, temp: "25°C", lotacao: "Muito Alta" },
-        { nome: "Canasvieiras", desc: "Um dos destinos mais procurados por turistas do Mercosul, mar tranquilo e comércio forte.", regiao: "Norte", img: imgGenerica2, temp: "24°C", lotacao: "Muito Alta" },
-        { nome: "Cachoeira do Bom Jesus", desc: "Extensão de Canasvieiras, com faixa de areia larga e águas convidativas.", regiao: "Norte", img: imgGenerica3, temp: "24°C", lotacao: "Média" },
-        { nome: "Ponta das Canas", desc: "Praia charmosa na ponta norte da ilha com colónias de pescadores.", regiao: "Norte", img: imgGenerica4, temp: "23°C", lotacao: "Média" },
-        { nome: "Lagoinha (do Norte)", desc: "Pequena e abrigada, com formato de ferradura e mar cristalino.", regiao: "Norte", img: imgGenerica1, temp: "24°C", lotacao: "Média" },
-        { nome: "Praia Brava", desc: "Paraíso dos surfistas com mar agitado, miradouro deslumbrante e condomínios de luxo.", regiao: "Norte", img: imgGenerica2, temp: "22°C", lotacao: "Alta" },
-        { nome: "Praia dos Ingleses", desc: "Infraestrutura completa, dunas incríveis e ótima para todas as idades.", regiao: "Norte", img: imgGenerica3, temp: "23°C", lotacao: "Muito Alta" },
-        { nome: "Praia do Santinho", desc: "História e natureza encontram-se. Famosa pelo resort e pelas inscrições rupestres.", regiao: "Norte", img: imgGenerica4, temp: "23°C", lotacao: "Alta" },
-        { nome: "Praia do Forte", desc: "Junto à histórica Fortaleza de São José da Ponta Grossa. Mar calmo e extenso.", regiao: "Norte", img: imgGenerica1, temp: "24°C", lotacao: "Média" },
-        { nome: "Praia da Daniela", desc: "Mar calmo e quente que parece uma lagoa. Ideal para crianças e famílias.", regiao: "Norte", img: imgGenerica2, temp: "25°C", lotacao: "Média" },
-        { nome: "Sambaqui", desc: "Raízes açorianas fortes, gastronomia focada em ostras e cenário bucólico.", regiao: "Norte", img: imgGenerica3, temp: "23°C", lotacao: "Baixa" },
-        { nome: "Santo Antônio de Lisboa", desc: "Um dos bairros mais antigos de Florianópolis, com arquitetura colonial e pôr do sol famoso.", regiao: "Norte", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Média" },
-        { nome: "Cacupé", desc: "Orla requintada com restaurantes sofisticados e vista espetacular para a Beira-Mar.", regiao: "Norte", img: imgGenerica4, temp: "23°C", lotacao: "Baixa" },
+    { nome: "Jurerê", desc: "Águas calmas e quentes, excelente para famílias com excelente infraestrutura.", regiao: "Norte", img: "img/praias/Jurerê.jpg", temp: "25°C", lotacao: "Alta" },
+    { nome: "Jurerê Internacional", desc: "Sinónimo de luxo, mansões e beach clubs exclusivos com festas sunset.", regiao: "Norte", img: "img/praias/Jurerê Internacional.jpg", temp: "25°C", lotacao: "Muito Alta" },
+    { nome: "Canasvieiras", desc: "Um dos destinos mais procurados por turistas do Mercosul, mar tranquilo e comércio forte.", regiao: "Norte", img: "img/praias/Canasvieiras.jpg", temp: "24°C", lotacao: "Muito Alta" },
+    { nome: "Cachoeira do Bom Jesus", desc: "Extensão de Canasvieiras, com faixa de areia larga e águas convidativas.", regiao: "Norte", img: "img/praias/Cachoeira do Bom Jesus.jpg", temp: "24°C", lotacao: "Média" },
+    { nome: "Ponta das Canas", desc: "Praia charmosa na ponta norte da ilha com colónias de pescadores.", regiao: "Norte", img: "img/praias/Ponta das Canas.jpg", temp: "23°C", lotacao: "Média" },
+    { nome: "Lagoinha (do Norte)", desc: "Pequena e abrigada, com formato de ferradura e mar cristalino.", regiao: "Norte", img: "img/praias/Lagoinha (do Norte).jpg", temp: "24°C", lotacao: "Média" },
+    { nome: "Praia Brava", desc: "Paraíso dos surfistas com mar agitado, miradouro deslumbrante e condomínios de luxo.", regiao: "Norte", img: "img/praias/Praia Brava.jpg", temp: "22°C", lotacao: "Alta" },
+    { nome: "Praia dos Ingleses", desc: "Infraestrutura completa, dunas incríveis e ótima para todas as idades.", regiao: "Norte", img: "img/praias/Praia dos Ingleses.jpg", temp: "23°C", lotacao: "Muito Alta" },
+    { nome: "Praia do Santinho", desc: "História e natureza encontram-se. Famosa pelo resort e pelas inscrições rupestres.", regiao: "Norte", img: "img/praias/Praia do Santinho.jpg", temp: "23°C", lotacao: "Alta" },
+    { nome: "Praia do Forte", desc: "Junto à histórica Fortaleza de São José da Ponta Grossa. Mar calmo e extenso.", regiao: "Norte", img: "img/praias/Praia do Forte.jpg", temp: "24°C", lotacao: "Média" },
+    { nome: "Praia da Daniela", desc: "Mar calmo e quente que parece uma lagoa. Ideal para crianças e famílias.", regiao: "Norte", img: "img/praias/Praia da Daniela.jpg", temp: "25°C", lotacao: "Média" },
+    { nome: "Sambaqui", desc: "Raízes açorianas fortes, gastronomia focada em ostras e cenário bucólico.", regiao: "Norte", img: "img/praias/Sambaqui.jpg", temp: "23°C", lotacao: "Baixa" },
+    { nome: "Santo Antônio de Lisboa", desc: "Um dos bairros mais antigos de Florianópolis, com arquitetura colonial e pôr do sol famoso.", regiao: "Norte", img: "img/praias/Santo Antônio de Lisboa.jpg", temp: "22°C", lotacao: "Média" },
+    { nome: "Cacupé", desc: "Orla requintada com restaurantes sofisticados e vista espetacular para a Beira-Mar.", regiao: "Norte", img: "img/praias/Cacupé.jpg", temp: "23°C", lotacao: "Baixa" },
 
         // --- LESTE DA ILHA ---
-        { nome: "Barra da Lagoa", desc: "O maior núcleo pesqueiro da ilha, com o Canal da Barra e piscinas naturais.", regiao: "Leste", img: "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Muito Alta" },
-        { nome: "Prainha da Barra", desc: "Pequena e escondida, acessível por uma curta trilha na Barra da Lagoa.", regiao: "Leste", img: imgGenerica1, temp: "22°C", lotacao: "Média" },
-        { nome: "Praia Mole", desc: "Ponto de encontro da viajem ativa, surfistas, parapente e bares com DJs.", regiao: "Leste", img: "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800", temp: "23°C", lotacao: "Alta" },
-        { nome: "Praia da Galheta", desc: "Acessível apenas por trilha e reservada para o naturismo (opcional).", regiao: "Leste", img: imgGenerica2, temp: "22°C", lotacao: "Baixa" },
-        { nome: "Praia da Joaquina", desc: "Reconhecimento internacional no surf. Dunas imensas famosas para a prática de sandboard.", regiao: "Leste", img: imgGenerica3, temp: "23°C", lotacao: "Muito Alta" },
-        { nome: "Praia do Gravatá", desc: "Trilha escondida, com relvados perfeitos para piquenique e mar aberto.", regiao: "Leste", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" },
-        { nome: "Praia do Moçambique", desc: "A maior extensão de areia da ilha (12km). Selvagem e preservada dentro de um parque estadual.", regiao: "Leste", img: imgGenerica1, temp: "21°C", lotacao: "Baixa" },
+        { nome: "Barra da Lagoa", desc: "O maior núcleo pesqueiro da ilha, com o Canal da Barra e piscinas naturais.", regiao: "Leste", img: "", temp: "22°C", lotacao: "Muito Alta" },
+        { nome: "Prainha da Barra", desc: "Pequena e escondida, acessível por uma curta trilha na Barra da Lagoa.", regiao: "Leste", img: "", temp: "22°C", lotacao: "Média" },
+        { nome: "Praia Mole", desc: "Ponto de encontro da viajem ativa, surfistas, parapente e bares com DJs.", regiao: "Leste", img: "", temp: "23°C", lotacao: "Alta" },
+        { nome: "Praia da Galheta", desc: "Acessível apenas por trilha e reservada para o naturismo (opcional).", regiao: "Leste", img: "", temp: "22°C", lotacao: "Baixa" },
+        { nome: "Praia da Joaquina", desc: "Reconhecimento internacional no surf. Dunas imensas famosas para a prática de sandboard.", regiao: "Leste", img: "", temp: "23°C", lotacao: "Muito Alta" },
+        { nome: "Praia do Gravatá", desc: "Trilha escondida, com relvados perfeitos para piquenique e mar aberto.", regiao: "Leste", img: "", temp: "22°C", lotacao: "Baixa" },
+        { nome: "Praia do Moçambique", desc: "A maior extensão de areia da ilha (12km). Selvagem e preservada dentro de um parque estadual.", regiao: "Leste", img: "", temp: "21°C", lotacao: "Baixa" },
 
         // --- SUL DA ILHA ---
-        { nome: "Praia do Campeche", desc: "Mar aberto de águas cristalinas com vista magnífica para a Ilha do Campeche.", regiao: "Sul", img: "https://images.unsplash.com/photo-1582291142747-19412953e34b?auto=format&fit=crop&w=800", temp: "22°C", lotacao: "Alta" },
-        { nome: "Praia da Armação", desc: "Tradicional vila de pescadores, com a icónica Igreja de Sant'Ana.", regiao: "Sul", img: imgGenerica2, temp: "22°C", lotacao: "Média" },
-        { nome: "Praia do Matadeiro", desc: "Paraíso do surf no Sul da ilha. Acessível apenas atravessando o rio.", regiao: "Sul", img: imgGenerica3, temp: "21°C", lotacao: "Média" },
-        { nome: "Praia do Morro das Pedras", desc: "Rodeada de rochas escuras, com ondas fortes e um miradouro espetacular no Convento.", regiao: "Sul", img: imgGenerica4, temp: "21°C", lotacao: "Baixa" },
-        { nome: "Praia do Pântano do Sul", desc: "Famosa pelos restaurantes tradicionais à beira-mar e pela pesca da tainha.", regiao: "Sul", img: imgGenerica1, temp: "22°C", lotacao: "Alta" },
-        { nome: "Praia dos Açores", desc: "Tranquila e com extensa faixa de areia, excelente para relaxar em família.", regiao: "Sul", img: imgGenerica2, temp: "21°C", lotacao: "Baixa" },
-        { nome: "Praia da Solidão", desc: "Cercada pela Mata Atlântica exuberante, possui ainda uma cascata escondida.", regiao: "Sul", img: imgGenerica3, temp: "21°C", lotacao: "Baixa" },
-        { nome: "Praia do Saquinho", desc: "Isolada, acessível por uma trilha cimentada através do Morro. Perfeita para desconectar.", regiao: "Sul", img: imgGenerica4, temp: "20°C", lotacao: "Muito Baixa" },
-        { nome: "Praia da Lagoinha do Leste", desc: "Frequentemente eleita a mais bela da ilha. Selvagem, sem acesso rodoviário, ideal para trilhas.", regiao: "Sul", img: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=800", temp: "21°C", lotacao: "Baixa" },
-        { nome: "Praia de Naufragados", desc: "No extremo sul da ilha. História em ruínas e natureza forte ao redor do farol.", regiao: "Sul", img: imgGenerica1, temp: "20°C", lotacao: "Baixa" },
-        { nome: "Ribeirão da Ilha", desc: "Polo gastronómico das ostras e um dos locais com arquitetura colonial açoriana mais preservada.", regiao: "Sul", img: imgGenerica2, temp: "23°C", lotacao: "Média" },
-        { nome: "Tapera", desc: "Mar raso, calmo e águas quentes. Uma praia mais nativa e residencial.", regiao: "Sul", img: imgGenerica3, temp: "25°C", lotacao: "Baixa" },
+        { nome: "Praia do Campeche", desc: "Mar aberto de águas cristalinas com vista magnífica para a Ilha do Campeche.", regiao: "Sul", img: "", temp: "22°C", lotacao: "Alta" },
+        { nome: "Praia da Armação", desc: "Tradicional vila de pescadores, com a icónica Igreja de Sant'Ana.", regiao: "Sul", img: "", temp: "22°C", lotacao: "Média" },
+        { nome: "Praia do Matadeiro", desc: "Paraíso do surf no Sul da ilha. Acessível apenas atravessando o rio.", regiao: "Sul", img:"", temp: "21°C", lotacao: "Média" },
+        { nome: "Praia do Morro das Pedras", desc: "Rodeada de rochas escuras, com ondas fortes e um miradouro espetacular no Convento.", regiao: "Sul", img: "", temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia do Pântano do Sul", desc: "Famosa pelos restaurantes tradicionais à beira-mar e pela pesca da tainha.", regiao: "Sul", img: "", temp: "22°C", lotacao: "Alta" },
+        { nome: "Praia dos Açores", desc: "Tranquila e com extensa faixa de areia, excelente para relaxar em família.", regiao: "Sul", img: "", temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia da Solidão", desc: "Cercada pela Mata Atlântica exuberante, possui ainda uma cascata escondida.", regiao: "Sul", img:"", temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia do Saquinho", desc: "Isolada, acessível por uma trilha cimentada através do Morro. Perfeita para desconectar.", regiao: "Sul", img:"", temp: "20°C", lotacao: "Muito Baixa" },
+        { nome: "Praia da Lagoinha do Leste", desc: "Frequentemente eleita a mais bela da ilha. Selvagem, sem acesso rodoviário, ideal para trilhas.", regiao: "Sul", img: "", temp: "21°C", lotacao: "Baixa" },
+        { nome: "Praia de Naufragados", desc: "No extremo sul da ilha. História em ruínas e natureza forte ao redor do farol.", regiao: "Sul", img: "", temp: "20°C", lotacao: "Baixa" },
+        { nome: "Ribeirão da Ilha", desc: "Polo gastronómico das ostras e um dos locais com arquitetura colonial açoriana mais preservada.", regiao: "Sul", img: "", temp: "23°C", lotacao: "Média" },
+        { nome: "Tapera", desc: "Mar raso, calmo e águas quentes. Uma praia mais nativa e residencial.", regiao: "Sul", img: "", temp: "25°C", lotacao: "Baixa" },
 
         // --- CONTINENTAL / CENTRO ---
-        { nome: "Praia de Itaguaçu", desc: "Vista maravilhosa para o pôr do sol, cercada por pedras folclóricas cheias de lendas açorianas.", regiao: "Centro", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" },
-        { nome: "Praia das Palmeiras", desc: "Pequena e tranquila, no coração da região continental com foco gastronómico ao redor.", regiao: "Centro", img: imgGenerica1, temp: "23°C", lotacao: "Baixa" },
-        { nome: "Praia da Saudade", desc: "Praia urbanizada da região de Coqueiros, ideal para caminhadas no calçadão à beira-mar.", regiao: "Centro", img: imgGenerica2, temp: "22°C", lotacao: "Média" },
-        { nome: "Praia do Meio", desc: "Faz parte do circuito gastronómico de Coqueiros. Mais frequentada por moradores para exercício.", regiao: "Centro", img: imgGenerica3, temp: "23°C", lotacao: "Média" },
-        { nome: "Praia do Bom Abrigo", desc: "Reduto charmoso, seguro e bem cuidado, ótimo para contemplar a ponte Hercílio Luz ao longe.", regiao: "Centro", img: imgGenerica4, temp: "22°C", lotacao: "Baixa" }
+        { nome: "Praia de Itaguaçu", desc: "Vista maravilhosa para o pôr do sol, cercada por pedras folclóricas cheias de lendas açorianas.", regiao: "Centro", img: "", temp: "22°C", lotacao: "Baixa" },
+        { nome: "Praia das Palmeiras", desc: "Pequena e tranquila, no coração da região continental com foco gastronómico ao redor.", regiao: "Centro", img: "", temp: "23°C", lotacao: "Baixa" },
+        { nome: "Praia da Saudade", desc: "Praia urbanizada da região de Coqueiros, ideal para caminhadas no calçadão à beira-mar.", regiao: "Centro", img: "", temp: "22°C", lotacao: "Média" },
+        { nome: "Praia do Meio", desc: "Faz parte do circuito gastronómico de Coqueiros. Mais frequentada por moradores para exercício.", regiao: "Centro", img:"", temp: "23°C", lotacao: "Média" },
+        { nome: "Praia do Bom Abrigo", desc: "Reduto charmoso, seguro e bem cuidado, ótimo para contemplar a ponte Hercílio Luz ao longe.", regiao: "Centro", img: "", temp: "22°C", lotacao: "Baixa" }
     ],
     hospedagem: [
         { nome: "Majestic Palace Hotel", local: "Centro", preco: "A consultar", rating: 4 },
